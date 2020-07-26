@@ -5,4 +5,9 @@
     <UserSecretsId>11060c5a-7ba7-4e93-8981-4b1292c973a4</UserSecretsId>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="3.1.6" />
+  </ItemGroup>
+
 </Project>
