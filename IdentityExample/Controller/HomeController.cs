@@ -19,30 +19,24 @@ namespace IdentityExample.Controllers
             return View();
         }
 
-        public IActionResult Authenticate()
+        public IActionResult Login()
         {
-            var localAuthorityClaims = new List<Claim>()
-            {
-                new Claim(ClaimTypes.Name, "Akash"),
-                new Claim(ClaimTypes.Email, "akash.jadhav.cse@gmail.com"),
-                new Claim("Nickname", "gambitier")
-            };
+            return View();
+        }
 
-            var licenceAuthorityClaims = new List<Claim>()
-            {
-                new Claim(ClaimTypes.Name, "Akash.Laxman.Jadhav"),
-                new Claim(ClaimTypes.Email, "csegambitier@gmail.com"),
-                new Claim("Nickname", "AJ"),
-                new Claim("Licence.Number", "IN9763714604")
-            };
+        public IActionResult Register()
+        {
+            return View();
+        }
 
-            var localAuthorityIdentity = new ClaimsIdentity(localAuthorityClaims, "Local Authority's Identity");
+        public IActionResult Login(string userName, string password)
+        {
 
-            var licenceAuthorityIdentity = new ClaimsIdentity(licenceAuthorityClaims, "Liecence Authority's Identity");
+            return RedirectToAction("Index", "Home");
+        }
 
-            var appAuthenticationPrincipal = new ClaimsPrincipal(new[] { localAuthorityIdentity, licenceAuthorityIdentity });
-
-            HttpContext.SignInAsync(appAuthenticationPrincipal);
+        public IActionResult Register(string userName, string password)
+        {
 
             return RedirectToAction("Index", "Home");
         }
