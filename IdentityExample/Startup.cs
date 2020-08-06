@@ -26,7 +26,9 @@ namespace IdentityExample
 
 
             // gets IdentityBuilder for creating and configuring the identity system.
+            // or simply registers infra to use identity package
             services.AddIdentity<IdentityUser, IdentityRole>()
+                .AddEntityFrameworkStores<AppDbContext>()
                 .AddDefaultTokenProviders();
 
             services.AddControllersWithViews();
